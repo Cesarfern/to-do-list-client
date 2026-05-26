@@ -9,7 +9,7 @@ const initialTarea = {
     id: 0,
     title: "",
     description: "",
-    IsCompleted: true
+    isCompleted: false
 }
 
 export function EditarTarea(){
@@ -26,7 +26,7 @@ export function EditarTarea(){
             }
         }
         obtenerTarea()
-    },[])
+    },[id])
 
     const inputChangeValue = (event:ChangeEvent <HTMLInputElement>)=> {
         const inputName = event.target.name;
