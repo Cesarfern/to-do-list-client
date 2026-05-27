@@ -1,9 +1,8 @@
-import {ChangeEvent, useEffect, useState} from "react"
-import {appsettings} from "../settings/appsetting"
-import {useNavigate, useParams, Link} from "react-router-dom"
-import Swal from "sweetalert2"
-import {ITarea} from "../Interfaces/ITarea"
-import {Container,Row,Col,Form,FormGroup, Label, Input, Button} from "reactstrap"
+import { useEffect, useState } from "react"
+import { appsettings } from "../settings/appsetting"
+import { useNavigate, useParams, Link } from "react-router-dom"
+import { ITarea } from "../Interfaces/ITarea"
+import { Container, Row, Col, Form, FormGroup, Label, Button } from "reactstrap"
 
 const initialTarea = {
     id: 0,
@@ -27,13 +26,6 @@ export function VerTarea(){
         }
         obtenerTarea()
     },[])
-
-    const inputChangeValue = (event:ChangeEvent <HTMLInputElement>)=> {
-        const inputName = event.target.name;
-        const inputValue = event.target.value;
-
-        setTarea({...tarea, [inputName] : inputValue})
-    }
 
     const Compleada = async () =>{
         tarea.isCompleted = true;
